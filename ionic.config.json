@@ -1,5 +1,8 @@
 {
   "name": "chat",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "71e98f07",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

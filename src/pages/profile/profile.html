@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="hcolor">
+  
+    <ion-title >Profile  </ion-title>
+    
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+<div class="profile-image" (click)="editimage()">
+  <img src="{{avatar}}">
+</div>
+<div class = "name">
+  <h2 (click)="editname()">{{displayName}} </h2>
+</div>
+<div class ="tap">
+  Tap on your pic or username to change it.
+</div>
+
+ <ion-list-header class ="classmates">
+    Classmates
+  </ion-list-header>
+  <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)">
+    <ion-avatar item-left>
+      <img src={{item.photoURL}}>
+    </ion-avatar>
+    <h3>{{item.displayName}}</h3>
+  </ion-item>
+
+</ion-content>
+

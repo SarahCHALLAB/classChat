@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar color="hcolor">
+    <ion-title>Dashboard</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-buttons end>
+      <button ion-button icon-only (click)="logout()" class="button button-icon icon ion-stop customIconSound" style="float: left;">
+        <ion-icon name="exit"> Log out</ion-icon>
+      </button>
+    </ion-buttons> 
+
+<ion-buttons end>
+      <button ion-button icon-only (click)="addbuddy()" class="button button-icon icon ion-stop customIconSound">
+        <ion-icon name="person-add"> Add</ion-icon>
+      </button>
+    </ion-buttons> <br><br>
+<ion-list no-lines>
+  <ion-list-header class ="req">
+    Requests
+  </ion-list-header>
+ <label class = "cool"> Slide requests to the left... </label>
+  <ion-item-sliding *ngFor="let item of myrequests">
+    <ion-item>
+    <ion-avatar item-left>
+      <img src="{{item.photoURL}}">
+    </ion-avatar>
+    <h4>{{item.displayName}}</h4>
+    </ion-item>
+    <ion-item-options>
+      <button ion-button color="secondary" (click)="accept(item)">
+        <ion-icon name="checkmark"></ion-icon>
+        Add
+      </button>
+      <button ion-button color="danger" (click)="ignore(item)">
+        <ion-icon name="trash"></ion-icon>
+        Not now
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  
+</ion-list>
+
+</ion-content>
